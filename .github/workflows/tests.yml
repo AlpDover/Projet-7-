@@ -14,12 +14,12 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@latest
+      uses: actions/checkout
 
     - name: Set up Python
-      uses: actions/setup-python@latest
+      uses: actions/setup-python
       with:
-        python-version: 3.x  # Replace "x" with your Python version (e.g., 3.8)
+        python-version: 3.11.3  # Replace "x" with your Python version (e.g., 3.8)
 
     - name: Install Dependencies
       run: |
