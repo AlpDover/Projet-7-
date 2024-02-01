@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2.4.4  # Update to the latest version that explicitly supports Node.js 20
+      uses: actions/checkout@latest
 
     - name: Set up Python
-      uses: actions/setup-python@v2.4.6  # Update to the latest version that explicitly supports Node.js 20
+      uses: actions/setup-python@latest
       with:
         python-version: 3.x  # Replace "x" with your Python version (e.g., 3.8)
 
