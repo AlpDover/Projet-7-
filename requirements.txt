@@ -1,5 +1,2 @@
-json
 pytest
 Flask
-pickle
-requests
