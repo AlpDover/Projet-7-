@@ -27,6 +27,11 @@ jobs:
       with:
         python-version: 3.11.3  # Replace "x" with your Python version (e.g., 3.8)
 
+    - name: Install Dependencies
+      run: |
+        pip install flask  # Install Flask and other dependencies
+
+
     - name: Install pytest
       run: |
         pip install pytest
