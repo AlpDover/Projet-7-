@@ -12,18 +12,28 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./  # Specify the working directory
+
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'  # If your repository has submodules
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: 3.11.3  # Replace "x" with your Python version (e.g., 3.8)
 
-    - name: Install pytest
-      run: |
-        pip install pytest
+    - name: Install pytest
+      run: |
+        pip install pytest
+
+    - name: Start API Server
+      run: |
+        python api_p7.py &  # Run the API server in the background
 
     - name: Run Tests
       run: |
