@@ -21,6 +21,10 @@ jobs:
       with:
         python-version: 3.11.3  # Replace "x" with your Python version (e.g., 3.8)
 
+    - name: Install pytest
+      run: |
+        pip install pytest
+
     - name: Run Tests
       run: |
         pytest test.py  # Adjust the test file name if needed
