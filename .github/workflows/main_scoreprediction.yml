@@ -78,7 +78,7 @@ jobs:
       - name: Activate virtual environment and install dependencies
         run: |
           ./venv/bin/activate && \
-          pip install -r requirements.txt Flask pandas scikit-learn streamlit
+          pip install -r requirements.txt Flask pandas scikit-learn streamlit xgboost requests
 
       - name: Check installed packages
         run: pip list
