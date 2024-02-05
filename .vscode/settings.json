@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/26c9613c-0490-4ad0-8a31-1f649ac367b5/resourceGroups/Predictiondescore_group/providers/Microsoft.Web/sites/Predictiondescore",
-    "appService.deploySubpath": "."
-}
