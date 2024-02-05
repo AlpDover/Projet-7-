@@ -40,7 +40,7 @@ jobs:
 
     - name: Start API Server
       run: |
-        python api_p7.py &  # Run the API server in the background
+        python app.py &  # Run the API server in the background
 
     - name: Run Tests
       run: |

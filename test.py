@@ -1,6 +1,6 @@
 import json
 import pytest
-from api_p7 import app  # Update with the correct name of your Flask app file
+from app import app  # Update with the correct name of your Flask app file
 import pickle
 import requests
 
