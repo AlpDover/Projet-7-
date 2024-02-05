@@ -61,7 +61,7 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-       - name: Clean up previous deployments
+      - name: Clean up previous deployments
         run: |
           az webapp deployment source delete --name Scoreprediction --resource-group <your-resource-group> --slot Production --clean
 
