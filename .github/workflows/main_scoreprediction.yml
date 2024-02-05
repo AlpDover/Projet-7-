@@ -69,6 +69,15 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_32F05A65A0124CDCA46B864B69AFE4E8 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6D9CF41A97DE465A8E0E73B52AAEAD08 }}
 
+      - name: Start API Server
+        run: |
+          python app.py &
+          sleep 5  # Wait for API server to start
+
+      - name: Start Streamlit App
+        run: |
+          streamlit run dashboard.py &
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
