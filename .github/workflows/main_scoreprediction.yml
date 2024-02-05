@@ -80,12 +80,12 @@ jobs:
 
       - name: Start API Server
         run: |
-          python /path/to/app.py &  # Replace with the actual path
+          python app.py &  # Replace with the actual path
           sleep 5  # Wait for API server to start
 
       - name: Start Streamlit App
         run: |
-          streamlit run /path/to/dashboard.py &  # Replace with the actual path
+          streamlit run dashboard.py &  # Replace with the actual path
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
