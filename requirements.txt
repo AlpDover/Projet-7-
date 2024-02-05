@@ -2,3 +2,4 @@ pytest
 Flask
 pandas
 scikit-learn
+streamlit
