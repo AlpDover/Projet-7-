@@ -63,7 +63,7 @@ jobs:
 
       - name: Clean up previous deployments
         run: |
-          az webapp deployment source delete --name Scoreprediction --resource-group appsvc_linux_centralus_basic --slot Production --clean
+          az webapp deployment source delete --name Scoreprediction --resource-group appsvc_linux_centralus_basic --clean
 
       - name: Login to Azure
         uses: azure/login@v1
