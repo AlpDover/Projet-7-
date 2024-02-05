@@ -75,9 +75,9 @@ jobs:
         run: |
           az webapp deployment source delete --name Scoreprediction --resource-group appsvc_linux_centralus_basic
 
-      - name: Activate virtual environment
+      - name: Activate virtual environment and install dependencies
         run: |
-          source venv/bin/activate && \
+          ./venv/bin/activate && \
           pip install -r requirements.txt Flask pandas scikit-learn streamlit
 
       - name: Check installed packages
