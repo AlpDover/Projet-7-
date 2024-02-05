@@ -88,10 +88,6 @@ jobs:
           python app.py &
           sleep 5  # Wait for API server to start
 
-      - name: Start Streamlit App
-        run: |
-          streamlit run dashboard.py &
-
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
