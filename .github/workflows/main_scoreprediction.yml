@@ -61,16 +61,16 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      - name: Clean up previous deployments
-        run: |
-          az webapp deployment source delete --name Scoreprediction --resource-group appsvc_linux_centralus_basic
-
       - name: Login to Azure
         uses: azure/login@v1
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9A7669CD5300475C876506E23D81446A }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_32F05A65A0124CDCA46B864B69AFE4E8 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6D9CF41A97DE465A8E0E73B52AAEAD08 }}
+
+      - name: Clean up previous deployments
+        run: |
+          az webapp deployment source delete --name Scoreprediction --resource-group appsvc_linux_centralus_basic
 
       - name: Start API Server
         run: |
