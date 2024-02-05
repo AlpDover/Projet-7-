@@ -78,14 +78,17 @@ jobs:
       - name: Activate virtual environment
         run: source venv/bin/activate
 
+      - name: Check installed packages
+        run: pip list
+
       - name: Start API Server
         run: |
-          python app.py &  # Replace with the actual path
+          python app.py &
           sleep 5  # Wait for API server to start
 
       - name: Start Streamlit App
         run: |
-          streamlit run dashboard.py &  # Replace with the actual path
+          streamlit run dashboard.py &
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
