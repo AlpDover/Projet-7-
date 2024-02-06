@@ -85,7 +85,8 @@ jobs:
 
       - name: Start API Server
         run: |
-          python app.py 
+          python app.py &
+          sleep 5  # Wait for API server to start
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
