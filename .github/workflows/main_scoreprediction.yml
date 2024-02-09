@@ -30,7 +30,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install scikit-learn xgboost requests Flask streamlit pandas
 
       - name: Check installed packages
         run: pip list
@@ -78,7 +77,7 @@ jobs:
       - name: Activate virtual environment and install dependencies
         run: |
           ./venv/bin/activate && \
-          pip install -r requirements.txt Flask pandas scikit-learn streamlit xgboost requests
+          pip install -r requirements.txt
 
       - name: Check installed packages
         run: pip list
