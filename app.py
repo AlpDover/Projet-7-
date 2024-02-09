@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 import pickle
 import pandas as pd
-import xgboost
-
+import xgboost as xgb
+from xgboost import XGBRegressor
 
 app = Flask(__name__)
 
