@@ -135,11 +135,14 @@ def main():
     
     credit_score_gauge(probability)
 
+    #print(dataset.columns)
+
     # Dropdown for variable selection
     selected_variable = st.selectbox("Select Variable:", ['CODE_GENDER', 'DAYS_EMPLOYED', 'DAYS_BIRTH', 'PAYMENT_RATE'])
 
     compare_clients(selected_variable, selected_client_data_viz, dataset, prediction)
 
+   
 
     # # Dropdown for variable selection
     selected_variable_1 = st.selectbox("Select Variable 1:", ['DAYS_EMPLOYED', 'DAYS_BIRTH', 'PAYMENT_RATE', 'CODE_GENDER'])
@@ -155,7 +158,7 @@ def main():
     sns.scatterplot(data=dataset, x=selected_variable_1, y=selected_variable_2)
 
     # Highlight the selected client
-    selected_client_data_int = dataset.loc[int(client_id)]  # Assuming the client ID is the index and stored as integer
+    selected_client_data_int = test_results_data[test_results_data['SK_ID_CURR'] == int(client_id)]
     plt.scatter(selected_client_data_int[selected_variable_1], selected_client_data_int[selected_variable_2], color='orange', label='Selected Client')
 
     plt.title(f'Scatter Plot of {selected_variable_1} and {selected_variable_2}')
