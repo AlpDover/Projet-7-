@@ -23,7 +23,8 @@ RUN pip install --no-cache-dir \
     shap==0.43.0 \
     scikit-learn==1.3.1 \
     streamlit==1.30.0 \
-    xgboost==2.0.0
+    xgboost==2.0.0 \
+    ipython==8.14.0
 
 # Expose the ports for both the Flask API and the Streamlit app
 EXPOSE 5000
