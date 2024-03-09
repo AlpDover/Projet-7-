@@ -42,11 +42,8 @@ def predict():
         threshold = 0.45
         predictions_binary = (prediction_proba[:, 1] > threshold).astype(int)
 
-        # Create a DataFrame with the binary predictions
-        y_test = pd.DataFrame(predictions_binary, columns=['TARGET'])
-
-        # Return the binary predictions as a JSON response
-        return jsonify({'predictions_binary': y_test['TARGET'].tolist()[0]})
+        # Return the binary predictions, prediction probabilities, and threshold as a JSON response
+        return jsonify({'predictions_binary': predictions_binary.tolist(), 'prediction_proba': prediction_proba.tolist(), 'threshold': threshold})
 
     except Exception as e:
         return jsonify({'error': str(e)})
