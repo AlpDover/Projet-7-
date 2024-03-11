@@ -72,7 +72,7 @@ jobs:
 
       - name: Clean up previous deployments
         run: |
-          az webapp deployment source delete --name Scorepredgithub
+          az webapp deployment source delete --name Scorepredgithub --resource-group Scorepred2
 
       - name: Activate virtual environment and install dependencies
         run: |
