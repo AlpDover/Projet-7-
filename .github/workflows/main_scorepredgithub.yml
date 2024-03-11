@@ -70,10 +70,6 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1F668C426D0240F494A1520FBA824E73 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5D8D8CD4368F479F99BED7C16DBA192A }}
 
-      - name: Clean up previous deployments
-        run: |
-          az webapp deployment source delete --name Scorepredgithub --resource-group Scorepred2
-
       - name: Activate virtual environment and install dependencies
         run: |
           ./venv/bin/activate && \
