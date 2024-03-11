@@ -106,7 +106,7 @@ def main():
    
 
     # Make a request to the API
-    api_url = 'http://127.0.0.1:5000/predict'  # Update with the correct URL where your Flask app is running
+    api_url = 'https://scorepredgithub.azurewebsites.net/predict'  # Update with the correct URL where your Flask app is running
     response = requests.post(api_url, json=api_data)
 
 # Check if the request was successful
