@@ -28,7 +28,8 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install Flask==3.0.0 pandas==2.0.2 scikit-learn==1.3.1 streamlit==1.30.0 xgboost==2.0.0 requests==2.31.0
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -69,10 +70,29 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1F668C426D0240F494A1520FBA824E73 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5D8D8CD4368F479F99BED7C16DBA192A }}
 
+      - name: Clean up previous deployments
+        run: |
+          az webapp deployment source delete --name Scorepredgithub
+
+      - name: Activate virtual environment and install dependencies
+        run: |
+          ./venv/bin/activate && \
+          pip install Flask==3.0.0 pandas==2.0.2 scikit-learn==1.3.1 streamlit==1.30.0 xgboost==2.0.0 requests==2.31.0
+
+      - name: Check installed packages
+        run: pip list
+
+      - name: Start API Server
+        run: |
+          python app.py &
+          sleep 5  # Wait for API server to start
+
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
           app-name: 'Scorepredgithub'
           slot-name: 'Production'
-          
+
+
