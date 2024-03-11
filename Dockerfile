@@ -16,6 +16,7 @@ COPY client_data.parquet .
 RUN pip install --no-cache-dir \
     Flask==3.0.0 \
     pandas==2.0.2 \
+    scikit-learn=.3.1 \
     xgboost==2.0.0 
 
 # Expose the ports for both the Flask API and the Streamlit app

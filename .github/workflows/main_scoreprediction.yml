@@ -1,4 +1,4 @@
-name: Build and deploy Python app to Azure Web App - Scoreprediction
+name: Build and deploy Python app to Azure Web App - Scorepredgithub
 
 on:
   push:
@@ -87,5 +87,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'Scoreprediction'
+          app-name: 'Scorepredgithub'
           slot-name: 'Production'
