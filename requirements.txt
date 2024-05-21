@@ -1,6 +1,6 @@
 Flask==3.0.0 
 pandas==2.0.2 
-requests==2.31.0 
+requests==2.32.0 
 matplotlib==3.7.1 
 seaborn==0.12.2 
 shap==0.43.0 
